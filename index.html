@@ -1,41 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
+   
+    <!--Navbar-->
+    <nav>
+    <div class="navbar">
+        <div class="logo"><a href="#">MyPortfolio</a></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">CRUD Manager</a>
+        </div>
+    </div>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Hi, I'm <span>Masoom Fatima</span></h1>
+        <p>Future Web Developer. Learning to build simple and clean websites.</p>
 
-    <!--Header/Navbar-->
+        <div class="btns">
+            <button class="btn btn-outline">About Me</button>
+            <button class="btn btn-outline">View CRUD Manager</button>
+        </div>
+    </div>
 
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!--About ME -->
-
-    <section id="about">
+    <!-- ABOUT SECTION -->
+  
+    <section class="about">
         <h2>About Me</h2>
-        <p>Hello! My name is Masoom Fatima . I'm a web developer with a passion for creating beautiful and functional websites.</p>
-        <p>In the next 5 years, I see myself as a skilled full-stack developer, working on innovative projects, contributing to the tech community, and continuously growing my skills in AI and web development.</p>
+        <p class="desc">
+            I'm a passionate developer who loves turning ideas into reality. 
+            I build responsive, user-friendly applications that solve real problems.
+        </p>
+
+        <!-- Skills -->
+        <div class="skills">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>React</span>
+            <span>Node.js</span>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact">
+            <p>📧 johndoe@email.com</p>
+            <p>📞 +1 234 567 890</p>
+        </div>
     </section>
-    <!--Projects-->
- 
 
-    <!--Contact-->
+    <!-- BUDGET OVERVIEW -->
+    <section class="budget-section">
+        <h2>Budget Overview</h2>
+
+        <div class="overview">
+            <div class="card">
+                <h4>Total Budget</h4>
+                <p>$0</p>
+            </div>
+
+            <div class="card">
+                <h4>Collected</h4>
+                <p>$0</p>
+            </div>
+
+            <div class="card">
+                <h4>Pending</h4>
+                <p>$0</p>
+            </div>
+
+            <div class="card">
+                <h4>Students</h4>
+                <p>0</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
 
+    <!-- ADD NEW RECORD -->
+    <section class="container">
+        <h2>Add New Record</h2>
 
-    <!--Footer-->
+        <button class="fill-btn" onclick="fillRandom()">Fill Randomly</button>
 
-    <p>© 2024 Masoom Fatima. All rights reserved.</p>
+        <form id="studentForm" class="form-grid">
+
+            <input type="text" placeholder="Student ID" required />
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Phone" />
+
+            <select name="department" title="Department">
+                <option>Department</option>
+                <option>Computer Science</option>
+                <option>Engineering</option>
+            </select>
+
+            <input type="text" placeholder="Course" />
+            <select name="semester" title="Semester">
+                <option>Semester</option>
+                <option>1</option><option>2</option><option>3</option>
+            </select>
+
+            <input type="text" placeholder="GPA" />
+            <input type="date" placeholder="Enrollment Date" />
+
+            <input type="text" placeholder="Address" />
+            <input type="text" placeholder="City" />
+            <input type="text" placeholder="Country" />
+            <select name="status" title="Status">
+                <option>Status</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+
+            <input type="text" placeholder="Guardian Name" />
+
+            <input type="number" placeholder="Total Fees ($)" />
+            <input type="number" placeholder="Fees Paid ($)" />
+            <select name="paymentStatus" title="Payment Status">
+                <option>Payment Status</option>
+                <option>Paid</option>
+                <option>Pending</option>
+            </select>
+            <select name="paymentMethod" title="Payment Method">
+                <option>Payment Method</option>
+                <option>Card</option>
+                <option>Cash</option>
+            </select>
+
+            <input type="date" placeholder="Last Payment Date" />
+
+            <select name="gender" title="Gender">
+                <option>Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <input type="date" placeholder="Date of Birth" />
+
+            <select name="bloodGroup" title="Blood Group">
+                <option>Blood Group</option>
+                <option>A+</option>
+                <option>O+</option>
+            </select>
+            <input type="text" placeholder="Nationality" />
+            <input type="text" placeholder="Emergency Contact" />
+
+        </form>
+
+        <button class="add-btn" onclick="addRecord()">+ Add Record</button>
+    </section>
+
+    <!-- STUDENT RECORDS -->
+    <section class="records container">
+        <h2>Student Records</h2>
+
+        <div class="record-header">
+            <input type="text" placeholder="Search..." id="searchBox" />
+            <select name="filterStatus" title="Filter Status">
+                <option>All</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+        </div>
+
+        <div class="empty-box" id="emptyMessage">
+            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" width="60" alt="Empty records">
+            <p>No records yet. Add a new record to get started!</p>
+        </div>
+
+        <table id="recordTable" class="hidden">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Semester</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2024 MyPortfolio. Made with ❤️
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
