@@ -9,33 +9,35 @@
 </head>
 
 <body>
+
+
    
     <!--Navbar-->
-    <nav>
-    <div class="navbar">
-        <div class="logo"><a href="#">MyPortfolio</a></div>
+    <nav class="navbar">
+        <div class="logo"><a     href="#">MyPortfolio</a></div>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">CRUD Manager</a>
+            <a class="nav-home"  href="#">Home</a>
+            <a class="nav-about" href="#">About</a>
+            <a class="nav-crud"  href="#">CRUD Manager</a>
         </div>
-    </div>
     </nav>
+
+
     
     <!-- HERO SECTION -->
-    <div class="hero">
+    <div id="herotop" class="hero">
         <h1>Hi, I'm <span>Masoom Fatima</span></h1>
         <p>Future Web Developer. Learning to build simple and clean websites.</p>
 
         <div class="btns">
-            <button class="btn btn-outline">About Me</button>
+            <button class="btn-about btn btn-outline">About Me</button>
             <button class="btn btn-outline">View CRUD Manager</button>
         </div>
     </div>
 
     <!-- ABOUT SECTION -->
   
-    <section class="about">
+    <section id="aboutsection" class="about">
         <h2>About Me</h2>
         <p class="desc">
             I'm a passionate developer who loves turning ideas into reality. 
@@ -58,6 +60,8 @@
             <p>📞 +1 234 567 890</p>
         </div>
     </section>
+
+
 
     <!-- BUDGET OVERVIEW -->
     <section class="budget-section">
@@ -86,13 +90,11 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
 
 
-    <!-- ADD NEW RECORD -->
-    <section class="container">
+
+    <!-- CRUD SECTION -->
+    <section id="crudsection" class="container">
         <h2>Add New Record</h2>
 
         <button class="fill-btn" onclick="fillRandom()">Fill Randomly</button>
@@ -158,48 +160,44 @@
                 <option>Blood Group</option>
                 <option>A+</option>
                 <option>O+</option>
-            </select>
-            <input type="text" placeholder="Nationality" />
-            <input type="text" placeholder="Emergency Contact" />
+                </select>
 
-        </form>
-
-        <button class="add-btn" onclick="addRecord()">+ Add Record</button>
+                <input type="text" placeholder="Nationality" />
+                <input type="text" placeholder="Emergency Contact" />
+                </form>
+           <button class="add-btn" onclick="addRecord()">+ Add Record</button>
     </section>
 
-    <!-- STUDENT RECORDS -->
-    <section class="records container">
-        <h2>Student Records</h2>
 
-        <div class="record-header">
-            <input type="text" placeholder="Search..." id="searchBox" />
-            <select name="filterStatus" title="Filter Status">
-                <option>All</option>
-                <option>Active</option>
-                <option>Inactive</option>
-            </select>
-        </div>
 
-        <div class="empty-box" id="emptyMessage">
-            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" width="60" alt="Empty records">
-            <p>No records yet. Add a new record to get started!</p>
-        </div>
+    <!-- STUDENT RECORDS TABLE -->
+   
+<section class="container">
+    <h2>Student Records</h2>
 
-        <table id="recordTable" class="hidden">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Department</th>
-                    <th>Semester</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
+    <table class="record-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Total Fees</th>
+                <th>Paid</th>
+                <th>Balance</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
 
-    <!-- FOOTER -->
+        <tbody id="recordTableBody"></tbody>
+    </table>
+</section>
+
+
+
+<!-- FOOTER -->
+
+
     <footer>
         © 2024 MyPortfolio. Made with ❤️
     </footer>

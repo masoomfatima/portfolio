@@ -2,9 +2,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 2000px;
+    background: #f3f3ff
 }
 * {
     text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 /* NAVBAR */
@@ -12,38 +17,26 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    width: 90%;
-    padding: 10px 40px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    background: transparent;
-    font-family: Calibri;
-  
-}
-nav {
     width: 100%;
     height: 70px;
-    background: white;
-    padding: 0 40px;
+    padding: 10px 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
+    align-items: center;
+    background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 99;
+    z-index: 999;
 }
+.navbar.sticky {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
 
 nav .logo {
     color: #7b4bff;
     font-size: 28px;
     font-weight: 700;
-}
-.logo {
-  font-size: 15px;
-  font-weight: 500;
-
 }
 
 
@@ -80,7 +73,6 @@ nav ul li a {
     color: #7f6cff;
     cursor: pointer;
 }
-
 
 /* HERO SECTION */
 .hero {
@@ -166,6 +158,7 @@ nav ul li a {
 .about {
     width: 80%;
     margin: 60px auto;
+    scroll-margin-top: 100px;
     
 }
 
@@ -246,12 +239,7 @@ nav ul li a {
 
 
 /* FORM GRID */
-.form-grid {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
+
 
 .form-grid input,
 .form-grid select {
@@ -261,16 +249,6 @@ nav ul li a {
 }
 
 /* BUTTONS */
-.fill-btn {
-    float: right;
-    background: #7c4dff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
 .add-btn {
     margin-top: 20px;
@@ -283,36 +261,12 @@ nav ul li a {
 }
 
 /* RECORDS SECTION */
-.records h2 {
-    margin-bottom: 30px;
-    width: 80%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.record-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
 
 .record-header input,
 .record-header select {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ddd;
-}
-
-.empty-box {
-    text-align: center;
-    padding: 40px;
-    color: #888;
-}
-
-.hidden {
-    display: none;
 }
 
 table {
@@ -325,6 +279,107 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
+/* Table Header */
+.container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.fill-btn {
+    float: right;
+    background: #8d6bff;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: -50px;
+}
+
+.form-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+/* Input + Select Styles */
+.form-grid input,
+.form-grid select {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1.5px solid #d8d8ff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+    border-color: #8d6bff;
+    box-shadow: 0 0 0 2px rgba(141, 107, 255, 0.2);
+}
+
+.add-btn {
+    margin-top: 25px;
+    background: transparent;
+    color: #8d6bff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.record-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.record-table thead th {
+    background: #8d6bff;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.record-table tbody tr {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+.record-table tbody td {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+}
+
+.record-table tbody tr td:first-child {
+    border-left: 3px solid #8d6bff;
+}
+
+.record-table tbody tr:hover {
+    transform: scale(1.01);
+    transition: 0.1s;
+}
+
+
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 20px;
@@ -334,96 +389,9 @@ footer {
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-body {
-    background: #f3f3ff;
-}
 
 
 
-/* Overview Boxes */
-.overview {
-    width: 90%;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
 
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
 
-.card h4 {
-    color: #5a41d6;
-    font-weight: 600;
-}
-
-.card p {
-    font-size: 22px;
-    margin-top: 8px;
-    font-weight: 700;
-}
-
-/* Form Section */
-.form-section {
-    width: 90%;
-    margin: 40px auto;
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.form-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.form-header h2 {
-    color: #333;
-}
-
-#randomBtn {
-    background: #7b4bff;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.grid {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-}
-
-input, select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-.add-btn {
-    margin-top: 20px;
-    background: #7b4bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
 
